@@ -1,0 +1,59 @@
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp"
+    android:background="@drawable/gradient_background"
+    android:gravity="center">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Connect with Us"
+        android:textSize="34sp"
+        android:layout_marginBottom="38dp"
+        android:textStyle="bold"
+        android:textColor="@color/black"
+        android:layout_gravity="center" />
+
+    <ImageView
+        android:id="@+id/imageViewChef"
+        android:layout_width="wrap_content"
+        android:layout_height="320dp"
+        android:textAlignment="center"
+        android:src="@drawable/chef_image" />
+
+    <LinearLayout
+        android:id="@+id/containerButtons"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="40dp"
+        android:gravity="center"
+        >
+        <ImageButton
+            android:id="@+id/buttonInstagram"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_margin="16dp"
+            android:background="@drawable/instagram_icon" />
+
+        <ImageButton
+            android:id="@+id/buttonFacebook"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:background="@drawable/facebook_icon"
+            android:layout_margin="16dp" />
+
+
+        <ImageButton
+            android:id="@+id/buttonWebsite"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:background="@drawable/image"
+            android:layout_margin="16dp" />
+    </LinearLayout>
+
+
+</LinearLayout>

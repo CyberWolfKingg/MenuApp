@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">MenuApp</string>
+    <string name="total_items">Total items: %1$d</string>
+</resources>
