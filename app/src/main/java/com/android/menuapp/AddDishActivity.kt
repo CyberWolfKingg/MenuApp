@@ -16,10 +16,18 @@ class AddDishActivity : AppCompatActivity() {
         val buttonAddDish: Button = findViewById(R.id.buttonAddDish)
 
         // Sets the dish type options
-        val courses = arrayOf("Starter", "Main Course", "Dessert")
+        val selectedCourse = intent.getStringExtra("course")
+        val courses = arrayOf(selectedCourse ?: "Starter", "Main Course", "Dessert")
+
         val adapter = ArrayAdapter(this, android.R.layout.simple_spinner_item, courses)
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
         spinnerCourse.adapter = adapter
+
+        if (selectedCourse != null) {
+            val index = courses.indexOf(selectedCourse)
+            spinnerCourse.setSelection(index)
+            spinnerCourse.isEnabled = false // Disable selection
+        }
 
         // Logic for adding a new dish
         buttonAddDish.setOnClickListener {
@@ -31,7 +39,6 @@ class AddDishActivity : AppCompatActivity() {
             if (dishName.isNotEmpty() && dishDescription.isNotEmpty() && dishPrice != null) {
                 DishData.addDish(DishItem(dishName, dishDescription, course, dishPrice))
                 Toast.makeText(this, "$dishName added!", Toast.LENGTH_SHORT).show()
-
                 editTextDishName.text.clear()
                 editTextDishDescription.text.clear()
                 editTextDishPrice.text.clear()

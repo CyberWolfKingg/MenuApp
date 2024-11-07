@@ -40,11 +40,24 @@ object DishData {
         )
     )
 
-    fun getDishes(): List<DishItem> {
+    fun getDishes(): MutableList<DishItem> {
         return dishes
     }
 
     fun addDish(dish: DishItem) {
         dishes.add(dish)
+    }
+
+    fun removeDish(dish: DishItem) {
+        dishes.remove(dish)  // Remove o prato da lista
+    }
+
+    fun getAveragePriceForCourse(course: String): Double {
+        val filteredDishes = dishes.filter { it.course == course }
+        return if (filteredDishes.isNotEmpty()) {
+            filteredDishes.sumOf { it.price } / filteredDishes.size
+        } else {
+            0.0
+        }
     }
 }
